@@ -14,10 +14,10 @@ import reactor.core.publisher.Flux;
         @Autowired
         private PlayerReactiveRepository repository;
 
-        @GetMapping("/list-players")
-        public String listPlayers(Model model){
-            Flux<Player> flux = repository.findAll();
-            model.addAttribute("players", flux);
-            return "players";
-        }
+       @GetMapping("/list-players")
+       public String listPlayers(Model model){
+           Flux<Player> flux = repository.findAll();
+           model.addAttribute("players", flux);
+           return "players";
+       }
 }

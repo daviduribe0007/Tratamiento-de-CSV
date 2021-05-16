@@ -3,23 +3,22 @@ package com.example.demo.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Players")
+@Document(collection = "players")
 public class Player {
-    @Id
-    public int id;
+    public Integer id;
     public String name;
-    public int age;
+    public Integer age;
     public String icon;
     public String national;
-    public int winners;
-    public int games;
+    public Integer winners;
+    public Integer games;
     public String club;
 
     public Player(){
 
     }
 
-    public Player(int id, String name, int age, String icon, String national, int winners, int games, String club) {
+    public Player(Integer id, String name, Integer age, String icon, String national, Integer winners, Integer games, String club) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -30,7 +29,7 @@ public class Player {
         this.club = club;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -46,7 +45,7 @@ public class Player {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
@@ -70,7 +69,7 @@ public class Player {
         this.national = national;
     }
 
-    public int getWinners() {
+    public Integer getWinners() {
         return winners;
     }
 
@@ -78,7 +77,7 @@ public class Player {
         this.winners = winners;
     }
 
-    public int getGames() {
+    public Integer getGames() {
         return games;
     }
 

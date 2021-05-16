@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>National</th>
+    </tr>
+    </thead>
+    <tbody align="center">
+    <tr th:each="s : ${players}">
+        <td th:text="${s.name}">...</td>
+        <td th:text="${s.age}">...</td>
+        <td th:text="${s.national}">...</td>
+    </tr>
+
+    </tbody>
+</table>
+</body>
+</html>
