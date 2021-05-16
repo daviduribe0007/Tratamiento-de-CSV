@@ -74,7 +74,7 @@ public class CSVUtilTest {
 
         Flux<Player> listFlux = playerReactiveRepository.findAll() ;
         Mono<Map<String, Collection<Player>>> listFilter = listFlux
-                .filter(player -> player.age >= 35)
+                .filter(player -> validar(player.age) >= 35)
                 .map(player -> {
                     player.name = player.name.toUpperCase(Locale.ROOT);
                     return player;
@@ -90,6 +90,9 @@ public class CSVUtilTest {
         assert listFilter.block().size() == 322;
     }
 
+    private Integer validar(Integer age) {
+            return age == null ? 0:age;
+    }
 
 
 }
