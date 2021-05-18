@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.CsvUtilFile;
 import com.example.demo.model.Player;
 import com.example.demo.repository.PlayerReactiveRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import reactor.core.publisher.Flux;
 
-   @Controller
+import java.util.List;
+
+@Controller
     public class PlayerController {
 
         @Autowired
@@ -16,7 +19,7 @@ import reactor.core.publisher.Flux;
 
        @GetMapping("/list-players")
        public String listPlayers(Model model){
-           Flux<Player> flux = repository.findAll();
+           List<Player> flux = CsvUtilFile.getPlayers();
            model.addAttribute("players", flux);
            return "players";
        }
